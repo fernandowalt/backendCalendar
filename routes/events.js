@@ -9,7 +9,7 @@ const {
   crearEventos,
   actualizarEventos,
   eliminarEventos,
-} = require("../controlers/events");
+} = require("../controlers/events")
 
 const router = Router();
 

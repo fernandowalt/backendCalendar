@@ -2,6 +2,7 @@ const { Router } = require("express");
 const { validarJWT } = require("../middlewares/validar-jwt");
 const { check } = require("express-validator");
 const { validateInputs } = require("../middlewares/validateInputs");
+const { isDate } = require("../helpers/isDate");
 
 const {
   getEventos,
@@ -20,8 +21,8 @@ router.post(
   "/",
   [
     check("title", "el titulo es requerido").not().isEmpty(),
-    check("start", "fecha de inicio requerida").isDate(),
-    check("end", "fecha de finalizacion requerida").isDate(),
+    check("start", "fecha de inicio requerida").custom(isDate),
+    check("end", "fecha de finalizacion requerida").custom(isDate),
     validateInputs,
   ],
   crearEventos

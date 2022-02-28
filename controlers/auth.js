@@ -4,7 +4,6 @@ const { generarJWT } = require("../helpers/jwt");
 const Users = require("../models/Users-model");
 
 const createUser = async (req, res) => {
-  
   const { email, password } = req.body;
 
   try {
@@ -37,7 +36,7 @@ const createUser = async (req, res) => {
   } catch (error) {
     res.status(500).json({
       ok: false,
-      msg: "por  favor comunicarse con el administrador",
+      msg: "por  favor comunicarse con el administrador1",
     });
   }
 };
@@ -75,7 +74,7 @@ const loginUser = async (req, res) => {
   } catch (error) {
     res.status(400).json({
       ok: false,
-      msg: "por  favor comunicarse con el administrador",
+      msg: "por  favor comunicarse con el administrador2",
     });
   }
 };
@@ -86,6 +85,8 @@ const revalidateToken = async (req, res) => {
 
   res.json({
     ok: true,
+    uid:uid,
+    name:name,
     token: token,
   });
 };

@@ -24,10 +24,7 @@ router.post(
 router.post("/",
   [
     check("email", "el email no es correcto").isEmail(),
-    check(
-      "password",
-      "la contraseña no es correcta, debe contener minimo 6 caracteres"
-    ).isLength({ min: 6 }),
+    check("password","la contraseña no es correcta, debe contener minimo 6 caracteres").isLength({ min: 5 }),
     validateInputs
   ],
   loginUser
